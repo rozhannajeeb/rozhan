@@ -1,0 +1,33 @@
+#include <iostream>
+#include <stack>
+
+int main() {
+    // Creating a stack of integers
+    std::stack<int> myStack;
+
+    // Pushing elements onto the stack
+    myStack.push(10);
+    myStack.push(20);
+    myStack.push(30);
+
+    // Displaying the elements before pop
+    std::cout << "Stack elements before pop: ";
+    for (std::stack<int> tempStack = myStack; !tempStack.empty(); tempStack.pop()) {
+        std::cout << tempStack.top() << " ";
+    }
+    std::cout << "\n";
+
+    // Popping one element from the stack
+    myStack.pop();
+
+    // Displaying the elements after pop
+    std::cout << "Stack elements after pop: ";
+    while (!myStack.empty()) {
+        std::cout << myStack.top() << " ";
+        myStack.pop(); // Remove the top element
+    }
+
+    std::cout << "\n";
+
+    return 0;
+}
